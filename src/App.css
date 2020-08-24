@@ -1,38 +1,140 @@
-.App {
-  text-align: center;
+@import url("/public/fonts/Spartan-VariableFont_wght.ttf");
+#root,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Spartan", sans-serif;
+  height: 100vh;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)),
+    url("./img/city.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.app {
+  height: 100%;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+}
+.card {
+  position: relative;
+  background: whitesmoke;
+  width: 50%;
+  height: 40%;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border-radius: 25px;
+  padding: 2%;
+  box-shadow: 0 0 20px rgba(233, 232, 232, 0.3);
 }
 
-.App-link {
-  color: #61dafb;
+.heading {
+  display: flex;
+  align-items: center;
+  height: 50%;
+  color: rgb(135, 149, 150);
+  text-align: center;
+  position: relative;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.button {
+  position: relative;
+  outline: none;
+  text-decoration: none;
+  border-radius: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  height: 40px;
+  width: 210px;
+  opacity: 1;
+  color: #fff;
+  margin-top: 2.5rem;
+  background-color: #1a78d1;
+  border: 1px solid rgba(22, 76, 167, 0.6);
+}
+
+.button span {
+  color: #e1e5ec;
+  font-size: 12px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+  font-weight: bold;
+}
+.heading .quote-1,
+.heading .quote-2 {
+  color: #24b311;
+  margin: 0 0.5rem;
+}
+
+.heading .fas.fa-quote-left {
+  position: absolute;
+  bottom: 0%;
+  right: 0%;
+}
+
+.button:hover {
+  animation: rotate 0.7s ease-in-out both;
+  background-color: #24b311;
+  border: 1px solid #24b311;
+}
+
+.button:hover span {
+  animation: storm 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
   }
-  to {
-    transform: rotate(360deg);
+  25% {
+    transform: rotate(3deg) translate3d(0, 0, 0);
+  }
+  50% {
+    transform: rotate(-3deg) translate3d(0, 0, 0);
+  }
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes storm {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    width: 80%;
+    height: 30%;
   }
 }
